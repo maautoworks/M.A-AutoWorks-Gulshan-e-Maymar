@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="M.A AutoWorks - Premium Car Accessories & Auto Repair in Pakistan. LEDs, Horns, Mats, Speakers, and more.">
+    <meta name="keywords" content="Car Accessories Pakistan, Auto Repair, Car LEDs, Seat Covers, M.A AutoWorks">
+    <title>M.A AutoWorks | Premium Auto Accessories & Repair</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="M.A AutoWorks Logo" onerror="this.src='https://via.placeholder.com/150x50/FFD700/000000?text=M.A+AutoWorks'">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Home</a>
+                <a href="#shop">Shop</a>
+                <a href="about.html">About</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="search-btn" onclick="toggleSearch()"><i class="fas fa-search"></i></button>
+                <button class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <!-- Search Overlay -->
+        <div class="search-bar" id="searchBar">
+            <input type="text" id="searchInput" placeholder="Search products (e.g., LED, Horn)..." onkeyup="searchProducts()">
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>ELEVATE YOUR <span class="highlight">DRIVE</span></h1>
+            <p>Pakistan's #1 Destination for Premium Car Accessories & Auto Repair.</p>
+            <div class="hero-btns">
+                <a href="#shop" class="btn btn-primary">Shop Now</a>
+                <a href="https://wa.me/923178016025" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+
+    <!-- Shop Section -->
+    <section id="shop" class="section shop-section">
+        <div class="container">
+            <h2 class="section-title">Our <span>Collection</span></h2>
+            
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="filterCategory('all')">All</button>
+                <button class="filter-btn" onclick="filterCategory('fragrance')">Fragrance</button>
+                <button class="filter-btn" onclick="filterCategory('lighting')">Lighting</button>
+                <button class="filter-btn" onclick="filterCategory('interior')">Interior</button>
+                <button class="filter-btn" onclick="filterCategory('audio')">Audio</button>
+                <button class="filter-btn" onclick="filterCategory('utility')">Utility</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid">
+                <!-- Products injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Trust -->
+    <section class="features">
+        <div class="container grid-4">
+            <div class="feature-card">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Fast Delivery</h3>
+                <p>All over Pakistan</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-tools"></i>
+                <h3>Expert Repair</h3>
+                <p>Certified Mechanics</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-medal"></i>
+                <h3>Premium Quality</h3>
+                <p>100% Genuine Parts</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Always here to help</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>M.A AutoWorks</h3>
+                    <p>Your trusted partner for car accessories and auto repair services in Pakistan.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#" onclick="openAdmin()">Admin Panel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> 0317-8016025</p>
+                    <p><i class="fas fa-envelope"></i> m.aautoworks1@gmail.com</p>
+                    <div class="socials">
+                        <a href="https://www.tiktok.com/@maautoworks" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/maautoworks" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/923178016025" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 M.A AutoWorks. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/923178016025" class="float-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
