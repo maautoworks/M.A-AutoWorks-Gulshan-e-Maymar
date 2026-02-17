@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews | M.A AutoWorks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="M.A AutoWorks Logo" onerror="this.src='https://via.placeholder.com/150x50/FFD700/000000?text=M.A+AutoWorks'">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="index.html#shop">Shop</a>
+                <a href="about.html">About</a>
+                <a href="reviews.html" class="active">Reviews</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Customer <span>Reviews</span></h1>
+    </section>
+
+    <section class="section reviews-section">
+        <div class="container">
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Best LED lights I have ever bought for my Civic. The quality is unmatched and the installation was super quick. Highly recommended!"</p>
+                    <div class="reviewer">
+                        <h4>- Ahmed R.</h4>
+                        <span>Lahore</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"Got my car serviced here. The mechanics are honest and skilled. They didn't try to upsell unnecessary parts. Great experience."</p>
+                    <div class="reviewer">
+                        <h4>- Bilal K.</h4>
+                        <span>Karachi</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"The ambient lighting kit transformed my car interior. Looks like a luxury vehicle now. M.A AutoWorks is my go-to shop."</p>
+                    <div class="reviewer">
+                        <h4>- Usman S.</h4>
+                        <span>Islamabad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
