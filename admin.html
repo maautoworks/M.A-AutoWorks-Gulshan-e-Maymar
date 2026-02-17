@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | M.A AutoWorks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+
+    <!-- Login Screen -->
+    <div id="adminLogin" class="admin-login">
+        <div class="login-box">
+            <h2><i class="fas fa-lock"></i> Admin Access</h2>
+            <input type="text" id="adminUser" placeholder="Username">
+            <input type="password" id="adminPass" placeholder="Password">
+            <button onclick="checkLogin()" class="btn btn-primary">Login</button>
+            <p id="loginError" style="color:red; margin-top:10px; display:none;">Invalid Credentials</p>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="adminDashboard" class="admin-dashboard" style="display:none;">
+        <aside class="sidebar">
+            <h2>Admin Panel</h2>
+            <ul>
+                <li class="active" onclick="showTab('products')"><i class="fas fa-box"></i> Products</li>
+                <li onclick="showTab('orders')"><i class="fas fa-shopping-cart"></i> Orders (Local)</li>
+                <li onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</li>
+            </ul>
+        </aside>
+        <main class="admin-main">
+            <header>
+                <h1>Manage Inventory</h1>
+                <p>Edit prices and names directly. Changes save to your browser session.</p>
+            </header>
+
+            <div id="tab-products" class="admin-content">
+                <div class="admin-actions">
+                    <button onclick="saveChanges()" class="btn btn-success"><i class="fas fa-save"></i> Save Changes</button>
+                    <button onclick="resetData()" class="btn btn-danger"><i class="fas fa-undo"></i> Reset to Default</button>
+                </div>
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Price (PKR)</th>
+                                <th>Update Image URL</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProductList">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="tab-orders" class="admin-content" style="display:none;">
+                <h3>Recent Orders (Stored in Browser)</h3>
+                <div id="ordersList" class="orders-list">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        function checkLogin() {
+            const u = document.getElementById('adminUser').value;
+            const p = document.getElementById('adminPass').value;
+            if(u === 'admin' && p === 'maauto123') {
+                document.getElementById('adminLogin').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'flex';
+                renderAdminProducts();
+                renderOrders();
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+            }
+        }
+
+        function logout() {
+            location.reload();
+        }
+
+        function showTab(tab) {
+            document.querySelectorAll('.admin-content').forEach(el => el.style.display = 'none');
+            document.getElementById('tab-' + tab).style.display = 'block';
+            document.querySelectorAll('.sidebar li').forEach(el => el.classList.remove('active'));
+            event.target.classList.add('active');
+            if(tab === 'orders') renderOrders();
+        }
+    </script>
+</body>
+</html>
